@@ -2,6 +2,33 @@ import React, { Component } from "react";
 import formatCurrency from "../util";
 
 export default class Cart extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      name: "",
+      address: "",
+      email: "",
+      isCheckOut: false,
+    };
+  }
+
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
+  createOrder = (event) => {
+    event.preventDefault();
+
+    const order = {
+      name: this.state.name,
+      address: this.state.address,
+      email: this.state.email,
+      cartItems: this.props.cartItems,
+    };
+
+    this.props.createOrder(order);
+  };
   render() {
     const { cartItems } = this.props;
     return (
@@ -35,18 +62,65 @@ export default class Cart extends Component {
             </ul>
           </div>
           {cartItems.length !== 0 && (
-            <div className="cart">
-              <div className="total">
-                <div className="amount">
-                  Total Amount:{" "}
-                  {formatCurrency(
-                    cartItems.reduce((a, b) => a + b.price * b.count, 0)
-                  )}
+            <div>
+              <div className="cart">
+                <div className="total">
+                  <div className="amount">
+                    Total Amount:{" "}
+                    {formatCurrency(
+                      cartItems.reduce((a, b) => a + b.price * b.count, 0)
+                    )}
+                  </div>
+                  <button
+                    onClick={() => {
+                      this.setState({ isCheckOut: true });
+                    }}
+                    className="button button-primary btn-amount"
+                  >
+                    Proceed
+                  </button>
                 </div>
-                <button className="button button-primary btn-amount">
-                  Proceed
-                </button>
               </div>
+              {this.state.isCheckOut && (
+                <div className="cart">
+                  <form onSubmit={this.createOrder}>
+                    <ul className="form-container">
+                      <li>
+                        <label>Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          onChange={this.handleChange}
+                        ></input>
+                      </li>
+                      <li>
+                        <label>Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          onChange={this.handleChange}
+                        ></input>
+                      </li>
+                      <li>
+                        <label>Address</label>
+                        <input
+                          type="text"
+                          name="address"
+                          required
+                          onChange={this.handleChange}
+                        ></input>
+                      </li>
+                      <li>
+                        <button className="button button-primary" type="submit">
+                          Checkout
+                        </button>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+              )}
             </div>
           )}
         </div>

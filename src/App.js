@@ -11,18 +11,28 @@ class App extends React.Component {
       products: data.products,
       size: "",
       sort: "",
-      cartItems: [],
+      cartItems: localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : [],
     };
   }
 
+  createOrder = (order) => {
+    alert("need to handle this order" + order.name);
+  };
   removeFromCart = (product) => {
     const cartItems = this.state.cartItems.slice();
     this.setState({
       cartItems: cartItems.filter((item) => item.id !== product.id),
     });
+    localStorage.setItem(
+      "cartItems",
+      JSON.stringify(cartItems.filter((item) => item.id !== product.id))
+    );
   };
+
   addToCart = (product) => {
-    let cartItems = this.state.cartItems.slice();
+    const cartItems = this.state.cartItems.slice();
     let isAlreadyInCart = false;
     cartItems.forEach((item) => {
       if (item.id === product.id) {
@@ -35,6 +45,7 @@ class App extends React.Component {
       cartItems.push({ ...product, count: 1 });
     }
     this.setState({ cartItems });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
   sortProducts = (event) => {
     const sort = event.target.value;
@@ -96,6 +107,7 @@ class App extends React.Component {
               <Cart
                 cartItems={this.state.cartItems}
                 removeFromCart={this.removeFromCart}
+                createOrder={this.createOrder}
               />
             </div>
           </div>
