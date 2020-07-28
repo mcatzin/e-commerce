@@ -152,3 +152,58 @@ footer {
 .filter div {
   flex: 1;
 }
+
+/* Cart */
+.cart {
+  padding: 1.2rem;
+  margin: 1rem;
+  display: flex;
+}
+
+.cart-container {
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+
+.cart-list {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.cart-list img {
+  width: 10rem;
+}
+
+.cart-item li {
+  display: flex;
+}
+.cart-list li div {
+  padding: 0.5rem;
+}
+
+.cart-list li div:last-child {
+  flex: 1;
+}
+
+.button-align {
+  text-align: right;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.amount {
+  flex: 2;
+  margin: 0.3rem;
+}
+.btn-amount {
+  flex: 1;
+  margin: 0.3rem;
+}
+.total > div {
+  font-size: 2rem;
+}
