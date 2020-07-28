@@ -17,6 +17,7 @@ select,
 button,
 textarea {
   font-size: 1.6rem;
+  font-weight: 400;
   font-family: "Roboto", sans-serif;
 }
 
@@ -138,4 +139,16 @@ footer {
 }
 .button-primary {
   background-color: #fddc22;
+}
+
+/* Filter Section */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem solid #c0c0c0;
+}
+.filter div {
+  flex: 1;
 }

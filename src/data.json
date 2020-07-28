@@ -5,7 +5,7 @@
       "image": "/images/toy1.jpg",
       "title": "Robot Dog Friend",
       "description": "A Robot friend for your best friend.",
-      "avialableSize": ["M", "L", "XL"],
+      "availableSizes": ["M", "L", "XL"],
       "price": 100.99
     },
     {
@@ -13,7 +13,7 @@
       "image": "/images/toy2.jpg",
       "title": "Blue Elephant",
       "description": "Crafted with love, these adorable hand stuffed animal.",
-      "avialableSize": ["S", "M", "L"],
+      "availableSizes": ["XS", "S", "M", "L"],
       "price": 9.99
     },
     {
@@ -21,7 +21,7 @@
       "image": "/images/toy3.jpg",
       "title": "Dogwood",
       "description": "All-natural wood chews that prevent boredom and help maintain healthy teeth for your pet.",
-      "avialableSize": ["S", "M", "L", "XL"],
+      "availableSizes": ["S", "M", "L", "XL"],
       "price": 4.99
     },
     {
@@ -29,7 +29,7 @@
       "image": "/images/toy4.jpg",
       "title": "Tennis Ball Dog Toy",
       "description": "Tennis Ball Dog Toy serves up active fun in a variety of colors and sizes suited to your pup's play style.",
-      "avialableSize": ["S", "M"],
+      "availableSizes": ["XS", "S", "M"],
       "price": 3.55
     },
     {
@@ -37,7 +37,7 @@
       "image": "/images/toy5.jpg",
       "title": "Frisbee",
       "description": "Play fetch with your dog! Built for gentle chewers, Zisc is a high-flying, lightweight yet tough, human-hand-friendly frisbee for dogs.",
-      "avialableSize": ["M", "L"],
+      "availableSizes": ["M", "L"],
       "price": 4.24
     },
     {
@@ -45,7 +45,7 @@
       "image": "/images/toy6.jpg",
       "title": "Goodie Bone",
       "description": "The Goodie Bone is the answer to dogs that love the classic bone shape, but need a safe and strong rubber toy.",
-      "avialableSize": ["S", "L"],
+      "availableSizes": ["XS", "S", "L", "XL"],
       "price": 13.49
     }
   ]
