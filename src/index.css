@@ -228,3 +228,28 @@ input {
   padding: 0.7rem;
   border: 0.1rem #c0c0c0 solid;
 }
+
+/* Product Info Cara */
+.product-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 90vh;
+}
+
+.product-info img {
+  max-height: 100vh;
+  max-width: 45rem;
+  margin: 0 auto;
+}
+.product-info-description {
+  flex: 1 1;
+  margin: 1rem;
+}
+
+.close-modal {
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  z-index: 100;
+}

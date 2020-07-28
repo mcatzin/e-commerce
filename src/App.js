@@ -23,11 +23,11 @@ class App extends React.Component {
   removeFromCart = (product) => {
     const cartItems = this.state.cartItems.slice();
     this.setState({
-      cartItems: cartItems.filter((item) => item.id !== product.id),
+      cartItems: cartItems.filter((item) => item.id !== product._id),
     });
     localStorage.setItem(
       "cartItems",
-      JSON.stringify(cartItems.filter((item) => item.id !== product.id))
+      JSON.stringify(cartItems.filter((item) => item.id !== product._id))
     );
   };
 
@@ -35,7 +35,7 @@ class App extends React.Component {
     const cartItems = this.state.cartItems.slice();
     let isAlreadyInCart = false;
     cartItems.forEach((item) => {
-      if (item.id === product.id) {
+      if (item._id === product._id) {
         item.count++;
         isAlreadyInCart = true;
       }
@@ -62,7 +62,7 @@ class App extends React.Component {
             ? a.price < b.price
               ? 1
               : -1
-            : a.id > b.id
+            : a._id > b._id
             ? 1
             : -1
         ),
