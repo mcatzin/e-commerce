@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import formatCurrency from "../util";
-
+import { addToCart } from "../actions/cartActions";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
 import { connect } from "react-redux";
@@ -106,5 +106,6 @@ export default connect(
   (state) => ({ products: state.products.filteredItems }),
   {
     fetchProducts,
+    addToCart,
   }
 )(Product);
