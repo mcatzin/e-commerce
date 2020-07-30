@@ -46,5 +46,48 @@ app.delete("/api/products/:id", async (req, res) => {
 
   res.send(deleteProduct);
 });
+
+// Oder model
+const Order = mongoonse.model(
+  "order",
+  new mongoonse.Schema(
+    {
+      _id: {
+        type: String,
+        default: shortid.generate,
+      },
+      email: String,
+      name: String,
+      address: String,
+      total: Number,
+      cartItems: [
+        {
+          _id: String,
+          title: String,
+          price: Number,
+          count: Number,
+        },
+      ],
+    },
+    {
+      timestamps: true, // timestamps for creation and updates
+    }
+  )
+);
+
+//POST for form
+app.post("/api/orders", async (req, res) => {
+  if (
+    !req.body.name ||
+    !req.body.email ||
+    !req.body.address ||
+    !req.body.total ||
+    !req.body.cartItems
+  ) {
+    return res.send({ message: "Please fill all text fields." });
+  }
+  const order = await Order(req.body).save();
+  res.send(order);
+});
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("Listenning in port 5000"));

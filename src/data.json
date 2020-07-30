@@ -47,6 +47,22 @@
       "description": "The Goodie Bone is the answer to dogs that love the classic bone shape, but need a safe and strong rubber toy.",
       "availableSizes": ["XS", "S", "L", "XL"],
       "price": 13.49
+    },
+    {
+      "_id": "toy7",
+      "image": "/images/toy7.jpg",
+      "title": "Bubble",
+      "description": "Bubble Palz are made to keep dogs playing longer. With multiple textures, crinkle & squeaker sounds, this bubbly turtle will keep your furry friend engaged and happy.",
+      "availableSizes": ["S", "M"],
+      "price": 5.99
+    },
+    {
+      "_id": "toy8",
+      "image": "/images/toy8.jpg",
+      "title": "Avocado Plush",
+      "description": "Your dog will love the time it spends playing with this Top Paw Plush Avocado Dog Toy. This fun toy comes in the form of a delicious avocado, and keeps dogs entertained and engaged with the playful squeaking sounds it makes when played with. ",
+      "availableSizes": ["XS", "S", "M"],
+      "price": 2.99
     }
   ]
 }

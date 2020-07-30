@@ -51,6 +51,7 @@ header {
 header a {
   color: #fff;
   text-decoration: none;
+  font-size: 3rem;
 }
 main {
   grid-area: main;
@@ -75,7 +76,9 @@ footer {
 .sidebar {
   flex: 1 20rem;
 }
-
+.dog-logo {
+  width: 3rem;
+}
 /* Products Section */
 
 .products {
@@ -252,4 +255,29 @@ input {
   right: 1rem;
   top: 2.5rem;
   z-index: 100;
+}
+
+/* Order Section */
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.order-details li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-details li div {
+  padding: 10px;
+}
+.order-details .items {
+  text-align: right;
+  padding: 0;
+}
+.success-message {
+  color: blue;
 }
